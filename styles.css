@@ -1,0 +1,536 @@
+:root {
+    --bg-color: #0d1117;
+    --card-bg: #161b22;
+    --text-color: #c9d1d9;
+    --accent-color: #58a6ff;
+    --accent-glow: rgba(88, 166, 255, 0.4);
+    --border-color: #30363d;
+    --line-color: #58a6ff;
+    --highlight-color: #238636;
+    --font-heading: 'Orbitron', sans-serif;
+    --font-body: 'Noto Sans JP', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-body);
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.tournament-section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.tournament-title {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    color: var(--accent-color);
+    text-shadow: 0 0 10px var(--accent-glow);
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tournament-date {
+    font-size: 1rem;
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+/* Bracket Container */
+.bracket-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+    padding: 20px 0;
+}
+
+/* Rounds */
+.round {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex: 1;
+    max-width: 250px;
+    margin: 0;
+    position: relative;
+}
+
+.round+.round {
+    margin-left: 40px;
+}
+
+/* Titles */
+.round-title {
+    text-align: center;
+    font-family: var(--font-heading);
+    color: var(--text-color);
+    height: 20px;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Match & Groups */
+.match-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    flex-grow: 0;
+}
+
+/* Round 1 */
+.round-1 .match-group {
+    gap: 20px;
+    margin-bottom: 60px;
+}
+
+.round-1 .match-group:last-child {
+    margin-bottom: 0;
+}
+
+/* Round 2 */
+.round-2 .match-group {
+    margin-top: 43px;
+    gap: 146px;
+}
+
+/* Round 3 */
+.round-3 .match-group {
+    margin-top: 149px;
+}
+
+/* Winner */
+.round-winner .match-group {
+    margin-top: 149px;
+}
+
+/* Match Item */
+.match {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
+.participant-pair,
+.winner-box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 66px;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    position: relative;
+    z-index: 2;
+    overflow: visible;
+    justify-content: center;
+}
+
+.participant-pair:hover {
+    box-shadow: 0 0 10px var(--accent-glow);
+    border-color: var(--accent-color);
+}
+
+.participant {
+    padding: 0;
+    /* Remove padding to let anchor take full space */
+    flex: 1;
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    border-bottom: 1px solid var(--border-color);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.participant a {
+    color: inherit;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 0 10px;
+    transition: color 0.2s, background-color 0.2s;
+}
+
+.participant a:hover {
+    color: var(--accent-color);
+    background-color: rgba(88, 166, 255, 0.1);
+    text-decoration: underline;
+}
+
+.participant:last-child {
+    border-bottom: none;
+}
+
+.participant.tbd {
+    color: #484f58;
+    font-style: italic;
+}
+
+.winner-box {
+    text-align: center;
+    align-items: center;
+    font-size: 1.5rem;
+    background: linear-gradient(135deg, rgba(88, 166, 255, 0.1) 0%, rgba(35, 134, 54, 0.1) 100%);
+    border: 2px solid var(--accent-color);
+    box-shadow: 0 0 15px var(--accent-glow);
+}
+
+/* Lines */
+.match-group::after,
+.match-group::before,
+.match::after,
+.match::before {
+    background: var(--line-color);
+    box-shadow: 0 0 5px var(--accent-glow);
+    position: absolute;
+    pointer-events: none;
+}
+
+.round-1 .match-group::after {
+    content: '';
+    position: absolute;
+    right: -20px;
+    top: 33px;
+    bottom: 33px;
+    width: 2px;
+}
+
+.round-1 .match-group::before {
+    content: '';
+    position: absolute;
+    right: -40px;
+    top: 50%;
+    height: 2px;
+    width: 20px;
+}
+
+.round-1 .match::after {
+    content: '';
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    width: 20px;
+    height: 2px;
+}
+
+.round-2 .match::before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    width: 20px;
+    height: 2px;
+}
+
+.round-2 .match-group::after {
+    content: '';
+    position: absolute;
+    right: -20px;
+    top: 33px;
+    bottom: 33px;
+    width: 2px;
+}
+
+.round-2 .match-group::before {
+    content: '';
+    position: absolute;
+    right: -40px;
+    top: 50%;
+    height: 2px;
+    width: 20px;
+}
+
+.round-2 .match::after {
+    content: '';
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    width: 20px;
+    height: 2px;
+}
+
+.round-3 .match::before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    width: 20px;
+    height: 2px;
+}
+
+.round-3 .match::after {
+    content: '';
+    position: absolute;
+    right: -40px;
+    top: 50%;
+    width: 40px;
+    height: 2px;
+}
+
+.round-winner .match::before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    width: 20px;
+    height: 2px;
+}
+
+/* -----------------------------------------------------------
+   GRAND FINAL SECTION
+   ----------------------------------------------------------- */
+
+.grand-final-section {
+    margin-top: 40px;
+    padding: 40px;
+    background: radial-gradient(circle at center, rgba(88, 166, 255, 0.05) 0%, transparent 70%);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+}
+
+.grand-final-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+.grand-final-match {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    width: 100%;
+}
+
+.champion-card {
+    flex: 1;
+    max-width: 300px;
+    text-align: center;
+}
+
+.card-label {
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    color: var(--accent-color);
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.vs-element {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 100px;
+}
+
+.vs-text {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 0 20px var(--accent-glow), 0 0 40px var(--accent-glow);
+    font-style: italic;
+    z-index: 5;
+}
+
+.vs-line {
+    position: absolute;
+    top: 50%;
+    width: 200px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+    z-index: 1;
+}
+
+.ultimate-winner-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.crown-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.ultimate-winner-card {
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.ultimate-glow {
+    border-color: #f1c40f !important;
+    box-shadow: 0 0 30px rgba(241, 196, 15, 0.4) !important;
+    font-weight: bold;
+    color: #f1c40f;
+    font-size: 1.8rem !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+        overflow-x: hidden;
+    }
+
+    .container {
+        gap: 30px;
+    }
+
+    .tournament-title {
+        font-size: 1.2rem;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .bracket-container {
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding: 20px 10px;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .round {
+        min-width: 130px;
+        max-width: none;
+    }
+
+    .round+.round {
+        margin-left: 20px;
+    }
+
+    .participant-pair,
+    .winner-box {
+        height: 50px;
+    }
+
+    .round-1 .match-group {
+        gap: 10px;
+        margin-bottom: 30px;
+    }
+
+    .round-2 .match-group {
+        margin-top: 30px;
+        gap: 80px;
+    }
+
+    .round-3 .match-group,
+    .round-winner .match-group {
+        margin-top: 100px;
+    }
+
+    .round-1 .match-group::after,
+    .round-2 .match-group::after {
+        top: 25px;
+        bottom: 25px;
+        right: -10px;
+    }
+
+    .round-1 .match-group::before,
+    .round-2 .match-group::before {
+        right: -20px;
+        width: 10px;
+    }
+
+    .round-1 .match::after,
+    .round-2 .match::after,
+    .round-2 .match::before,
+    .round-3 .match::before,
+    .round-winner .match::before {
+        width: 10px;
+    }
+
+    .round-1 .match::after,
+    .round-2 .match::after {
+        right: -10px;
+    }
+
+    .round-2 .match::before,
+    .round-3 .match::before,
+    .round-winner .match::before {
+        left: -10px;
+    }
+
+    .round-3 .match::after {
+        width: 20px;
+        right: -20px;
+    }
+
+    .grand-final-section {
+        padding: 20px 10px;
+    }
+
+    .grand-final-match {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .champion-card {
+        width: 100%;
+        max-width: none;
+    }
+
+    .vs-text {
+        font-size: 2.2rem;
+    }
+
+    .vs-line {
+        width: 2px;
+        height: 90px;
+        background: linear-gradient(180deg, transparent, var(--accent-color), transparent);
+        top: -20px;
+    }
+}
