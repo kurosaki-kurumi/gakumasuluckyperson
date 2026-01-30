@@ -469,6 +469,16 @@ body {
         height: 50px;
     }
 
+    .participant {
+        font-size: 0.75rem;
+        padding: 0 6px;
+    }
+
+    .player-links {
+        gap: 5px;
+        margin-left: 5px;
+    }
+
     .round-1 .match-group {
         gap: 10px;
         margin-bottom: 30px;
