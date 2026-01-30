@@ -161,33 +161,45 @@ body {
 }
 
 .participant {
-    padding: 0;
-    /* Remove padding to let anchor take full space */
+    padding: 0 10px;
     flex: 1;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     font-size: 0.9rem;
     border-bottom: 1px solid var(--border-color);
     white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis;
 }
 
-.participant a {
-    color: inherit;
-    text-decoration: none;
+.player-name {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 10px 0;
+}
+
+.player-links {
+    display: flex;
+    gap: 8px;
+    margin-left: 10px;
+}
+
+.player-links a {
+    color: var(--text-color);
+    opacity: 0.6;
+    transition: color 0.2s, opacity 0.2s, transform 0.2s;
     display: flex;
     align-items: center;
-    width: 100%;
-    height: 100%;
-    padding: 0 10px;
-    transition: color 0.2s, background-color 0.2s;
+    justify-content: center;
 }
 
-.participant a:hover {
+.player-links a:hover {
     color: var(--accent-color);
-    background-color: rgba(88, 166, 255, 0.1);
-    text-decoration: underline;
+    opacity: 1;
+    transform: scale(1.1);
+    background-color: transparent;
+    text-decoration: none;
 }
 
 .participant:last-child {

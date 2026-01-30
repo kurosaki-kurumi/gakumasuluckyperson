@@ -1,70 +1,86 @@
 {
     "tournament1": [
         {
-            "name": "Player 1",
-            "url": "#"
+            "name": "猿飛佐奈",
+            "xUrl": "https://x.com/Unifee_sanachi",
+            "youtubeUrl": "https://www.youtube.com/@unifee_sarutobi"
         },
         {
-            "name": "Player 2",
-            "url": "#"
+            "name": "coming soon",
+            "xUrl": "#",
+            "youtubeUrl": "#"
         },
         {
-            "name": "Player 3",
-            "url": "#"
+            "name": "かぐch",
+            "xUrl": "https://x.com/RiuriuCagCag",
+            "youtubeUrl": "https://www.youtube.com/channel/UCxcnE_vX4qAADpyrmZ_cjAA"
         },
         {
-            "name": "Player 4",
-            "url": "#"
+            "name": "coming soon",
+            "xUrl": "#",
+            "youtubeUrl": "#"
         },
         {
-            "name": "Player 5",
-            "url": "#"
+            "name": "日向なこ",
+            "xUrl": "https://x.com/nako_3rl",
+            "youtubeUrl": "https://youtube.com/channel/UC2aJjm_delfy_nZsGEILxYw"
         },
         {
-            "name": "Player 6",
-            "url": "#"
+            "name": "coming soon",
+            "xUrl": "#",
+            "youtubeUrl": "#"
         },
         {
-            "name": "Player 7",
-            "url": "#"
+            "name": "いおん",
+            "xUrl": "https://x.com/ion_fna",
+            "youtubeUrl": "https://www.youtube.com/@ion_fna"
         },
         {
-            "name": "Player 8",
-            "url": "#"
+            "name": "coming soon",
+            "xUrl": "#",
+            "youtubeUrl": "#"
         }
     ],
     "tournament2": [
         {
-            "name": "Player 1",
-            "url": "#"
+            "name": "coming soon",
+            "xUrl": "#",
+            "youtubeUrl": "#"
         },
         {
-            "name": "Player 2",
-            "url": "#"
+            "name": "coming soon",
+            "xUrl": "#",
+            "youtubeUrl": "#"
         },
         {
-            "name": "Player 3",
-            "url": "#"
+            "name": "廿楽はのね",
+            "xUrl": "https://x.com/tsudurahanone",
+            "youtubeUrl": "https://www.youtube.com/@TsuduraHanone"
         },
         {
-            "name": "Player 4",
-            "url": "#"
+            "name": "coming soon",
+            "xUrl": "#",
+            "youtubeUrl": "#"
         },
         {
-            "name": "Player 5",
-            "url": "#"
+            "name": "白夜零兎",
+            "xUrl": "https://x.com/zero2_trpg",
+            "youtubeUrl": "https://www.youtube.com/@ShiroyaReito"
         },
         {
-            "name": "Player 6",
-            "url": "#"
+            "name": "coming soon",
+            "xUrl": "#",
+            "youtubeUrl": "#"
         },
         {
-            "name": "Player 7",
-            "url": "#"
+            "name": "坂道のぼる",
+            "xUrl": "https://twitter.com/noboru_SKMC",
+            "youtubeUrl": "https://www.youtube.com/@noboru_SKMC"
         },
         {
-            "name": "Player 8",
-            "url": "#"
+            "name": "coming soon",
+            "xUrl": "#",
+            "youtubeUrl": "#"
         }
     ]
 }
