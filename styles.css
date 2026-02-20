@@ -1,12 +1,26 @@
 :root {
-    --bg-color: #0d1117;
-    --card-bg: #161b22;
-    --text-color: #c9d1d9;
-    --accent-color: #58a6ff;
-    --accent-glow: rgba(88, 166, 255, 0.4);
-    --border-color: #30363d;
-    --line-color: #58a6ff;
-    --highlight-color: #238636;
+    --bg-color: #0b0d21;
+    --card-bg: rgba(26, 28, 58, 0.6);
+    --text-color: #ffffff;
+    --text-muted: #a0a4d0;
+    --border-color: rgba(255, 255, 255, 0.1);
+
+    /* Logo inspired colors */
+    --t1-accent: #ff7f6a;
+    /* Salmon Pink from "Gakumasu" ribbon */
+    --t1-glow: rgba(255, 127, 106, 0.4);
+
+    --t2-accent: #66d4ff;
+    /* Sky Blue from "Un" gradient */
+    --t2-glow: rgba(102, 212, 255, 0.4);
+
+    --victory-accent: #f1c40f;
+    /* Gold from trophy */
+    --victory-glow: rgba(241, 196, 15, 0.5);
+
+    --purple-main: #6b66ff;
+    /* Purple from "Saikyo" */
+
     --font-heading: 'Orbitron', sans-serif;
     --font-body: 'Noto Sans JP', sans-serif;
 }
@@ -19,6 +33,10 @@
 
 body {
     background-color: var(--bg-color);
+    background-image: url('bg.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     color: var(--text-color);
     font-family: var(--font-body);
     display: flex;
@@ -30,35 +48,48 @@ body {
 
 .container {
     width: 100%;
-    max-width: 100%;
+    max-width: 1200px;
     display: flex;
     flex-direction: column;
-    gap: 60px;
+    gap: 80px;
 }
 
 .tournament-section {
     display: flex;
     flex-direction: column;
     width: 100%;
+    position: relative;
+}
+
+/* Tournament specific themes */
+#t1 .tournament-title {
+    color: var(--t1-accent);
+    text-shadow: 0 0 15px var(--t1-glow);
+    border-color: var(--t1-accent);
+}
+
+#t2 .tournament-title {
+    color: var(--t2-accent);
+    text-shadow: 0 0 15px var(--t2-glow);
+    border-color: var(--t2-accent);
 }
 
 .tournament-title {
     font-family: var(--font-heading);
-    font-size: 1.8rem;
-    color: var(--accent-color);
-    text-shadow: 0 0 10px var(--accent-glow);
-    margin-bottom: 20px;
-    border-bottom: 2px solid var(--border-color);
-    padding-bottom: 10px;
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+    border-bottom: 3px solid;
+    padding-bottom: 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    letter-spacing: 2px;
 }
 
 .tournament-date {
-    font-size: 1rem;
-    color: var(--text-color);
-    opacity: 0.8;
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    font-weight: normal;
 }
 
 /* Bracket Container */
@@ -67,7 +98,7 @@ body {
     justify-content: center;
     width: 100%;
     position: relative;
-    padding: 20px 0;
+    padding: 30px 0;
 }
 
 /* Rounds */
@@ -77,24 +108,24 @@ body {
     justify-content: flex-start;
     flex: 1;
     max-width: 250px;
-    margin: 0;
     position: relative;
 }
 
 .round+.round {
-    margin-left: 40px;
+    margin-left: 50px;
 }
 
 /* Titles */
 .round-title {
     text-align: center;
     font-family: var(--font-heading);
-    color: var(--text-color);
-    height: 20px;
-    margin-bottom: 20px;
-    font-size: 0.9rem;
-    letter-spacing: 1px;
+    color: var(--text-muted);
+    height: 25px;
+    margin-bottom: 30px;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
     text-transform: uppercase;
+    font-weight: 700;
 }
 
 /* Match & Groups */
@@ -103,33 +134,29 @@ body {
     flex-direction: column;
     justify-content: center;
     position: relative;
-    flex-grow: 0;
 }
 
-/* Round 1 */
+/* Layout logic remains same but improved gaps */
 .round-1 .match-group {
-    gap: 20px;
-    margin-bottom: 60px;
+    gap: 25px;
+    margin-bottom: 50px;
 }
 
 .round-1 .match-group:last-child {
     margin-bottom: 0;
 }
 
-/* Round 2 */
 .round-2 .match-group {
-    margin-top: 43px;
-    gap: 146px;
+    margin-top: 45px;
+    gap: 155px;
 }
 
-/* Round 3 */
 .round-3 .match-group {
-    margin-top: 149px;
+    margin-top: 154px;
 }
 
-/* Winner */
 .round-winner .match-group {
-    margin-top: 149px;
+    margin-top: 154px;
 }
 
 /* Match Item */
@@ -145,30 +172,41 @@ body {
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 66px;
-    background-color: var(--card-bg);
+    height: 70px;
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border: 1px solid var(--border-color);
-    border-radius: 6px;
+    border-radius: 8px;
     position: relative;
     z-index: 2;
-    overflow: visible;
+    overflow: hidden;
     justify-content: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.participant-pair:hover {
-    box-shadow: 0 0 10px var(--accent-glow);
-    border-color: var(--accent-color);
+#t1 .participant-pair:hover {
+    border-color: var(--t1-accent);
+    box-shadow: 0 0 20px var(--t1-glow);
+    transform: translateY(-2px);
+}
+
+#t2 .participant-pair:hover {
+    border-color: var(--t2-accent);
+    box-shadow: 0 0 20px var(--t2-glow);
+    transform: translateY(-2px);
 }
 
 .participant {
-    padding: 0 10px;
+    padding: 0 15px;
     flex: 1;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
+    /* デスクトップ版は元のサイズに戻しました */
     border-bottom: 1px solid var(--border-color);
-    white-space: nowrap;
+    transition: background 0.2s;
     overflow: hidden;
 }
 
@@ -176,48 +214,64 @@ body {
     flex: 1;
     overflow: hidden;
     text-overflow: ellipsis;
+    white-space: nowrap;
     padding: 10px 0;
 }
 
 .player-links {
     display: flex;
-    gap: 8px;
-    margin-left: 10px;
+    gap: 5px;
+    margin-left: 15px;
+    align-items: center;
 }
 
 .player-links a {
-    color: var(--text-color);
-    opacity: 0.6;
-    transition: color 0.2s, opacity 0.2s, transform 0.2s;
+    color: var(--text-muted);
+    transition: all 0.2s ease;
     display: flex;
     align-items: center;
-    justify-content: center;
+    opacity: 0.7;
 }
 
 .player-links a:hover {
-    color: var(--accent-color);
+    color: var(--text-color);
     opacity: 1;
-    transform: scale(1.1);
-    background-color: transparent;
-    text-decoration: none;
+    transform: scale(1.2);
 }
 
-.participant:last-child {
-    border-bottom: none;
+.participant:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.participant a {
+    color: inherit;
+    text-decoration: none;
+    width: 100%;
 }
 
 .participant.tbd {
-    color: #484f58;
+    color: var(--text-muted);
     font-style: italic;
+    opacity: 0.6;
 }
 
 .winner-box {
     text-align: center;
     align-items: center;
-    font-size: 1.5rem;
-    background: linear-gradient(135deg, rgba(88, 166, 255, 0.1) 0%, rgba(35, 134, 54, 0.1) 100%);
-    border: 2px solid var(--accent-color);
-    box-shadow: 0 0 15px var(--accent-glow);
+    font-size: 1.6rem;
+    border-width: 2px;
+}
+
+#t1 .winner-box {
+    border-color: var(--t1-accent);
+    background: linear-gradient(135deg, rgba(255, 127, 106, 0.2) 0%, transparent 100%);
+    box-shadow: 0 0 20px var(--t1-glow);
+}
+
+#t2 .winner-box {
+    border-color: var(--t2-accent);
+    background: linear-gradient(135deg, rgba(102, 212, 255, 0.2) 0%, transparent 100%);
+    box-shadow: 0 0 20px var(--t2-glow);
 }
 
 /* Lines */
@@ -225,99 +279,104 @@ body {
 .match-group::before,
 .match::after,
 .match::before {
-    background: var(--line-color);
-    box-shadow: 0 0 5px var(--accent-glow);
+    background: var(--border-color);
     position: absolute;
     pointer-events: none;
 }
 
+#t1 .match-group::after,
+#t1 .match-group::before,
+#t1 .match::after,
+#t1 .match::before {
+    background: var(--t1-accent);
+    box-shadow: 0 0 8px var(--t1-glow);
+}
+
+#t2 .match-group::after,
+#t2 .match-group::before,
+#t2 .match::after,
+#t2 .match::before {
+    background: var(--t2-accent);
+    box-shadow: 0 0 8px var(--t2-glow);
+}
+
 .round-1 .match-group::after {
     content: '';
-    position: absolute;
-    right: -20px;
-    top: 33px;
-    bottom: 33px;
+    right: -25px;
+    top: 35px;
+    bottom: 35px;
     width: 2px;
 }
 
 .round-1 .match-group::before {
     content: '';
-    position: absolute;
-    right: -40px;
+    right: -50px;
     top: 50%;
     height: 2px;
-    width: 20px;
+    width: 25px;
 }
 
 .round-1 .match::after {
     content: '';
-    position: absolute;
-    right: -20px;
+    right: -25px;
     top: 50%;
-    width: 20px;
+    width: 25px;
     height: 2px;
 }
 
 .round-2 .match::before {
     content: '';
-    position: absolute;
-    left: -20px;
+    left: -25px;
     top: 50%;
-    width: 20px;
+    width: 25px;
     height: 2px;
 }
 
 .round-2 .match-group::after {
     content: '';
-    position: absolute;
-    right: -20px;
-    top: 33px;
-    bottom: 33px;
+    right: -25px;
+    top: 35px;
+    bottom: 35px;
     width: 2px;
 }
 
 .round-2 .match-group::before {
     content: '';
-    position: absolute;
-    right: -40px;
+    right: -50px;
     top: 50%;
     height: 2px;
-    width: 20px;
+    width: 25px;
 }
 
 .round-2 .match::after {
     content: '';
-    position: absolute;
-    right: -20px;
+    right: -25px;
     top: 50%;
-    width: 20px;
+    width: 25px;
     height: 2px;
 }
 
 .round-3 .match::before {
     content: '';
-    position: absolute;
-    left: -20px;
+    left: -25px;
     top: 50%;
-    width: 20px;
+    width: 25px;
     height: 2px;
 }
 
 .round-3 .match::after {
     content: '';
-    position: absolute;
-    right: -40px;
+    right: -50px;
     top: 50%;
-    width: 40px;
+    width: 50px;
     height: 2px;
 }
 
 .round-winner .match::before {
     content: '';
-    position: absolute;
-    left: -20px;
+    left: -25px;
     top: 50%;
-    width: 20px;
+    width: 25px;
     height: 2px;
 }
 
@@ -326,40 +385,50 @@ body {
    ----------------------------------------------------------- */
 
 .grand-final-section {
-    margin-top: 40px;
-    padding: 40px;
-    background: radial-gradient(circle at center, rgba(88, 166, 255, 0.05) 0%, transparent 70%);
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
+    margin-top: 60px;
+    padding: 60px;
+    background: radial-gradient(circle at center, rgba(107, 102, 255, 0.15) 0%, transparent 70%);
+    border: 2px solid rgba(107, 102, 255, 0.3);
+    border-radius: 20px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
 }
 
 .grand-final-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 40px;
+    gap: 60px;
 }
 
 .grand-final-match {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 60px;
+    gap: 80px;
     width: 100%;
 }
 
 .champion-card {
     flex: 1;
-    max-width: 300px;
+    max-width: 320px;
     text-align: center;
 }
 
 .card-label {
     font-family: var(--font-heading);
-    font-size: 0.8rem;
-    color: var(--accent-color);
-    margin-bottom: 10px;
-    letter-spacing: 2px;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    letter-spacing: 3px;
+    font-weight: 700;
+}
+
+.champion-card:nth-child(1) .card-label {
+    color: var(--t1-accent);
+}
+
+.champion-card:nth-child(3) .card-label {
+    color: var(--t2-accent);
 }
 
 .vs-element {
@@ -367,26 +436,44 @@ body {
     flex-direction: column;
     align-items: center;
     position: relative;
-    width: 100px;
+    width: 120px;
 }
 
 .vs-text {
     font-family: var(--font-heading);
-    font-size: 3rem;
-    font-weight: bold;
+    font-size: 4rem;
+    font-weight: 900;
     color: #fff;
-    text-shadow: 0 0 20px var(--accent-glow), 0 0 40px var(--accent-glow);
+    text-shadow:
+        0 0 10px #fff,
+        0 0 20px var(--purple-main),
+        0 0 40px var(--purple-main),
+        0 0 80px var(--purple-main);
     font-style: italic;
     z-index: 5;
+    animation: pulseGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes pulseGlow {
+    from {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+
+    to {
+        transform: scale(1.05);
+        opacity: 1;
+    }
 }
 
 .vs-line {
     position: absolute;
     top: 50%;
-    width: 200px;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+    width: 250px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--purple-main), transparent);
     z-index: 1;
+    opacity: 0.5;
 }
 
 .ultimate-winner-section {
@@ -394,165 +481,202 @@ body {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    margin-top: 20px;
 }
 
 .crown-icon {
-    font-size: 3rem;
-    margin-bottom: 15px;
+    font-size: 4rem;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 15px var(--victory-glow));
     animation: floating 3s ease-in-out infinite;
 }
 
 @keyframes floating {
-    0% {
-        transform: translateY(0px);
+
+    0%,
+    100% {
+        transform: translateY(0px) rotate(0deg);
     }
 
     50% {
-        transform: translateY(-10px);
-    }
-
-    100% {
-        transform: translateY(0px);
+        transform: translateY(-15px) rotate(5deg);
     }
 }
 
 .ultimate-winner-card {
     width: 100%;
-    max-width: 400px;
+    max-width: 450px;
     text-align: center;
 }
 
+.ultimate-winner-card .card-label {
+    color: var(--victory-accent);
+    font-size: 1.2rem;
+    text-shadow: 0 0 10px var(--victory-glow);
+}
+
 .ultimate-glow {
-    border-color: #f1c40f !important;
-    box-shadow: 0 0 30px rgba(241, 196, 15, 0.4) !important;
-    font-weight: bold;
-    color: #f1c40f;
-    font-size: 1.8rem !important;
+    border: 3px solid var(--victory-accent) !important;
+    background: linear-gradient(135deg, rgba(241, 196, 15, 0.2) 0%, rgba(26, 28, 58, 0.8) 100%) !important;
+    box-shadow: 0 0 40px var(--victory-glow) !important;
+    font-weight: 900;
+    color: var(--victory-accent);
+    font-size: 2.22rem !important;
+    height: 90px !important;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
     body {
-        padding: 10px;
-        overflow-x: hidden;
+        padding: 15px;
     }
 
     .container {
-        gap: 30px;
+        gap: 50px;
     }
 
     .tournament-title {
-        font-size: 1.2rem;
-        flex-wrap: wrap;
-        gap: 10px;
+        font-size: 1.5rem;
     }
 
     .bracket-container {
         justify-content: flex-start;
         overflow-x: auto;
-        padding: 20px 10px;
-        -webkit-overflow-scrolling: touch;
+        padding: 20px 0;
     }
 
     .round {
-        min-width: 130px;
-        max-width: none;
+        min-width: 150px;
     }
 
     .round+.round {
-        margin-left: 20px;
+        margin-left: 30px;
     }
 
     .participant-pair,
     .winner-box {
-        height: 50px;
+        height: 60px;
     }
 
     .participant {
         font-size: 0.75rem;
-        padding: 0 6px;
+        /* モバイルのみフォントサイズを小さく設定 */
+        padding: 0 8px;
     }
 
     .player-links {
-        gap: 5px;
-        margin-left: 5px;
+        gap: 4px;
+        /* モバイルの狭い幅に合わせて隙間を調整 */
+        margin-left: 8px;
     }
 
     .round-1 .match-group {
-        gap: 10px;
-        margin-bottom: 30px;
+        gap: 20px;
+        margin-bottom: 50px;
     }
 
     .round-2 .match-group {
-        margin-top: 30px;
-        gap: 80px;
+        margin-top: 40px;
+        gap: 130px;
     }
 
     .round-3 .match-group,
     .round-winner .match-group {
-        margin-top: 100px;
+        margin-top: 135px;
     }
 
-    .round-1 .match-group::after,
+    /* モバイル用の線の位置調整 (Round Gap 30px) */
+    /* Round 1 (Group Height: 60+20+60 = 140px) */
+    .round-1 .match-group::after {
+        right: -15px;
+        top: 30px;
+        bottom: 30px;
+        width: 2px;
+    }
+
+    .round-1 .match-group::before {
+        right: -30px;
+        width: 15px;
+        top: 50%;
+        /* 140/2 = 70px */
+    }
+
+    .round-1 .match::after {
+        right: -15px;
+        width: 15px;
+        top: 50%;
+        /* 60/2 = 30px */
+    }
+
+    /* Round 2 (Group Height: 60+130+60 = 250px) */
+    .round-2 .match::before {
+        left: -15px;
+        width: 15px;
+        top: 50%;
+        /* Midpoint matches Round 1 output */
+    }
+
     .round-2 .match-group::after {
-        top: 25px;
-        bottom: 25px;
-        right: -10px;
+        right: -15px;
+        top: 30px;
+        bottom: 30px;
+        width: 2px;
     }
 
-    .round-1 .match-group::before,
     .round-2 .match-group::before {
-        right: -20px;
-        width: 10px;
+        right: -30px;
+        width: 15px;
+        top: 50%;
+        /* 250/2 = 125px (Relative) -> 40+125 = 165px (Absolute) */
     }
 
-    .round-1 .match::after,
-    .round-2 .match::after,
-    .round-2 .match::before,
-    .round-3 .match::before,
-    .round-winner .match::before {
-        width: 10px;
-    }
-
-    .round-1 .match::after,
     .round-2 .match::after {
-        right: -10px;
+        right: -15px;
+        width: 15px;
+        top: 50%;
     }
 
-    .round-2 .match::before,
-    .round-3 .match::before,
-    .round-winner .match::before {
-        left: -10px;
+    /* Round 3 / Final */
+    .round-3 .match::before {
+        left: -15px;
+        width: 15px;
+        top: 50%;
+        /* Midpoint 135+30 = 165px matches Round 2 output */
     }
 
     .round-3 .match::after {
-        width: 20px;
-        right: -20px;
+        right: -30px;
+        width: 30px;
+        top: 50%;
+    }
+
+    .round-winner .match::before {
+        left: -15px;
+        width: 15px;
+        top: 50%;
     }
 
     .grand-final-section {
-        padding: 20px 10px;
+        padding: 30px 15px;
     }
 
     .grand-final-match {
         flex-direction: column;
-        gap: 20px;
-    }
-
-    .champion-card {
-        width: 100%;
-        max-width: none;
+        gap: 40px;
     }
 
     .vs-text {
-        font-size: 2.2rem;
+        font-size: 3rem;
     }
 
     .vs-line {
-        width: 2px;
-        height: 90px;
-        background: linear-gradient(180deg, transparent, var(--accent-color), transparent);
-        top: -20px;
+        width: 3px;
+        height: 120px;
+        background: linear-gradient(180deg, transparent, var(--purple-main), transparent);
+        top: -40px;
+    }
+
+    .ultimate-glow {
+        font-size: 1.8rem !important;
+        height: 75px !important;
     }
 }
