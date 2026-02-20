@@ -52,6 +52,74 @@ body {
     display: flex;
     flex-direction: column;
     gap: 80px;
+    padding-top: 40px;
+}
+
+/* -----------------------------------------------------------
+   HEADER SECTION
+   ----------------------------------------------------------- */
+.main-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+.header-logo img {
+    max-width: 500px;
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 0 20px rgba(107, 102, 255, 0.3));
+    animation: fadeInDown 1s ease-out;
+}
+
+.catchphrase {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--text-color);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.header-actions {
+    margin-top: 10px;
+}
+
+.btn-rule {
+    display: inline-block;
+    padding: 12px 30px;
+    background: linear-gradient(135deg, var(--purple-main) 0%, #4a45ff 100%);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    font-family: var(--font-heading);
+    letter-spacing: 2px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 20px rgba(107, 102, 255, 0.4);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-rule:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 0 30px rgba(107, 102, 255, 0.6);
+    background: linear-gradient(135deg, #4a45ff 0%, var(--purple-main) 100%);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .tournament-section {
@@ -147,16 +215,16 @@ body {
 }
 
 .round-2 .match-group {
-    margin-top: 45px;
-    gap: 155px;
+    margin-top: 47.5px;
+    gap: 145px;
 }
 
 .round-3 .match-group {
-    margin-top: 154px;
+    margin-top: 155px;
 }
 
 .round-winner .match-group {
-    margin-top: 154px;
+    margin-top: 155px;
 }
 
 /* Match Item */
@@ -653,6 +721,29 @@ body {
         left: -15px;
         width: 15px;
         top: 50%;
+    }
+
+    /* Header adjustments for mobile */
+    .main-header {
+        gap: 15px;
+        margin-bottom: 0;
+    }
+
+    .header-logo img {
+        max-width: 280px;
+    }
+
+    .catchphrase {
+        font-size: 0.85rem;
+        line-height: 1.6;
+        padding: 0;
+        width: 100%;
+        margin: 5px auto 0;
+    }
+
+    .btn-rule {
+        padding: 10px 20px;
+        font-size: 0.8rem;
     }
 
     .grand-final-section {

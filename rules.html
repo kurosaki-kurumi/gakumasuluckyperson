@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ルール - Vtuber学マス最強運選手権</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        .rules-container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 40px;
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .rules-title {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            color: var(--purple-main);
+            text-shadow: 0 0 15px rgba(107, 102, 255, 0.4);
+            margin-bottom: 30px;
+            text-align: center;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 20px;
+        }
+
+        .rules-content {
+            color: var(--text-color);
+        }
+
+        .rules-section {
+            margin-bottom: 40px;
+        }
+
+        .rules-section h3 {
+            color: var(--t2-accent);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.3rem;
+        }
+
+        .rule-table-wrapper {
+            overflow-x: auto;
+            margin-top: 20px;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+        }
+
+        .rule-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            min-width: 600px;
+        }
+
+        .rule-table th,
+        .rule-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .rule-table th {
+            background: rgba(107, 102, 255, 0.1);
+            color: var(--t2-accent);
+            font-weight: 700;
+        }
+
+        .rule-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .rule-table tr:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .point-tag {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            background: var(--t1-accent);
+            color: #fff;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .note-text {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .back-nav {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .btn-back {
+            display: inline-block;
+            padding: 12px 30px;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: all 0.3s;
+            border: 1px solid var(--border-color);
+            border-radius: 30px;
+            font-weight: bold;
+        }
+
+        .btn-back:hover {
+            color: #fff;
+            border-color: var(--purple-main);
+            box-shadow: 0 0 15px var(--purple-main);
+            background: rgba(107, 102, 255, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .rules-container {
+                margin: 20px 10px;
+                padding: 20px;
+            }
+
+            .rules-title {
+                font-size: 1.5rem;
+            }
+
+            .rule-table th,
+            .rule-table td {
+                padding: 10px;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="rules-container">
+        <h1 class="rules-title">EVENT RULES</h1>
+        <div class="rules-content">
+            <section class="rules-section">
+                <h3><span class="icon">🎮</span> ゲームルール</h3>
+                <p>1回のプロデュース中に引けた<b>Pアイテム・固有スキルカード・SP発生数</b>の合計を「運のよさ」として競い、参加者の中で最も運がよかった人を決める企画です。本企画はトーナメント戦で実施されます。
+                </p>
+            </section>
+
+            <section class="rules-section">
+                <h3><span class="icon">📊</span> 各種ルール表</h3>
+                <div class="rule-table-wrapper">
+                    <table class="rule-table">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>項目</th>
+                                <th>ルール</th>
+                                <th>加点</th>
+                                <th>備考</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>公演</td>
+                                <td>N.I.Aマスター</td>
+                                <td>-</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>最終試験</td>
+                                <td>FINALE</td>
+                                <td>-</td>
+                                <td class="note-text">合格必須、不合格の場合失格</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>プラン</td>
+                                <td>自由</td>
+                                <td>-</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>チャレンジPアイテム</td>
+                                <td>自由</td>
+                                <td>なし</td>
+                                <td class="note-text"></td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Pアイテム(サポカ)</td>
+                                <td>個数</td>
+                                <td><span class="point-tag">あり</span></td>
+                                <td rowspan="3" class="note-text" style="vertical-align: middle; text-align: center;">
+                                    <a href="sapoka.html"
+                                        style="color: var(--t2-accent); text-decoration: underline; font-weight: bold;">サポカ得点表</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>Pアイテム(サポカ)</td>
+                                <td>タイミング</td>
+                                <td><span class="point-tag">あり</span></td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>Pカード(サポカ)</td>
+                                <td>個数</td>
+                                <td><span class="point-tag">あり</span></td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>Pカード(サポカ)</td>
+                                <td>タイミング</td>
+                                <td>なし</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>SP発生</td>
+                                <td>回数</td>
+                                <td><span class="point-tag">あり</span></td>
+                                <td class="note-text">①各パラメータでSPが発生すると加点<br>
+                                    　例) Vo, Da, Viが3つ発生なら3つ分加点<br>
+                                    　例) Voのみ発生なら1つ分加点<br>
+                                    ②全員一律で各パラメータの最終点数に+10点</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>虹カード</td>
+                                <td>個数</td>
+                                <td><span class="point-tag">あり</span></td>
+                                <td class="note-text">1枚7点加算（サポカのカードではないもの）</td>
+                            </tr>
+                            <tr>
+                                <td>11</td>
+                                <td>デッキ枚数</td>
+                                <td>枚数</td>
+                                <td><span class="point-tag">あり</span></td>
+                                <td class="note-text">21枚以下：1枚毎に5点加点<br>
+                                    22枚：0点<br>
+                                    23枚以上：1枚毎に5点減点</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="rules-section"
+                style="margin-top: 20px; background: rgba(255, 127, 106, 0.1); padding: 20px; border-radius: 10px; border: 1px solid var(--t1-accent);">
+                <p style="font-weight: bold; display: flex; align-items: center; gap: 10px;">
+                    <span style="color: var(--t1-accent); font-size: 1.2rem;">⚡</span>
+                    獲得ポイントが同率だった場合は、最終スコアの高い方が勝ちになります。
+                </p>
+            </section>
+
+            <section class="rules-section" style="text-align: center; margin-top: 20px;">
+                <h3><span class="icon">🃏</span> サポカ得点表</h3>
+                <p>各サポートカードの具体的な獲得ポイントについては、以下の詳細ページをご確認ください。</p>
+                <div style="margin-top: 20px;">
+                    <a href="sapoka.html" class="btn-back"
+                        style="border-color: var(--t2-accent); color: var(--t2-accent);">サポカ得点表を見る</a>
+                </div>
+            </section>
+
+            <nav class="back-nav">
+                <a href="index.html" class="btn-back">← トーナメント表に戻る</a>
+            </nav>
+        </div>
+</body>
+
+</html>
