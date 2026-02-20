@@ -11,138 +11,6 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap"
         rel="stylesheet">
-    <style>
-        .rules-container {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 40px;
-            background: var(--card-bg);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid var(--border-color);
-            border-radius: 20px;
-            box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
-        }
-
-        .rules-title {
-            font-family: var(--font-heading);
-            font-size: 2rem;
-            color: var(--purple-main);
-            text-shadow: 0 0 15px rgba(107, 102, 255, 0.4);
-            margin-bottom: 30px;
-            text-align: center;
-            border-bottom: 2px solid var(--border-color);
-            padding-bottom: 20px;
-        }
-
-        .rules-content {
-            color: var(--text-color);
-        }
-
-        .rules-section {
-            margin-bottom: 40px;
-        }
-
-        .rules-section h3 {
-            color: var(--t2-accent);
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 1.3rem;
-        }
-
-        .rule-table-wrapper {
-            overflow-x: auto;
-            margin-top: 20px;
-            border-radius: 10px;
-            border: 1px solid var(--border-color);
-        }
-
-        .rule-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 0.9rem;
-            min-width: 600px;
-        }
-
-        .rule-table th,
-        .rule-table td {
-            padding: 15px;
-            text-align: left;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .rule-table th {
-            background: rgba(107, 102, 255, 0.1);
-            color: var(--t2-accent);
-            font-weight: 700;
-        }
-
-        .rule-table tr:last-child td {
-            border-bottom: none;
-        }
-
-        .rule-table tr:hover {
-            background: rgba(255, 255, 255, 0.05);
-        }
-
-        .point-tag {
-            display: inline-block;
-            padding: 2px 8px;
-            border-radius: 4px;
-            background: var(--t1-accent);
-            color: #fff;
-            font-size: 0.8rem;
-            font-weight: bold;
-        }
-
-        .note-text {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            line-height: 1.5;
-        }
-
-        .back-nav {
-            margin-top: 40px;
-            text-align: center;
-        }
-
-        .btn-back {
-            display: inline-block;
-            padding: 12px 30px;
-            color: var(--text-muted);
-            text-decoration: none;
-            transition: all 0.3s;
-            border: 1px solid var(--border-color);
-            border-radius: 30px;
-            font-weight: bold;
-        }
-
-        .btn-back:hover {
-            color: #fff;
-            border-color: var(--purple-main);
-            box-shadow: 0 0 15px var(--purple-main);
-            background: rgba(107, 102, 255, 0.1);
-        }
-
-        @media (max-width: 768px) {
-            .rules-container {
-                margin: 20px 10px;
-                padding: 20px;
-            }
-
-            .rules-title {
-                font-size: 1.5rem;
-            }
-
-            .rule-table th,
-            .rule-table td {
-                padding: 10px;
-                font-size: 0.8rem;
-            }
-        }
-    </style>
 </head>
 
 <body>
@@ -203,7 +71,7 @@
                                 <td>個数</td>
                                 <td><span class="point-tag">あり</span></td>
                                 <td rowspan="3" class="note-text" style="vertical-align: middle; text-align: center;">
-                                    <a href="sapoka.html"
+                                    <a href="supportcard.html"
                                         style="color: var(--t2-accent); text-decoration: underline; font-weight: bold;">サポカ得点表</a>
                                 </td>
                             </tr>
@@ -257,9 +125,8 @@
                 </div>
             </section>
 
-            <section class="rules-section"
-                style="margin-top: 20px; background: rgba(255, 127, 106, 0.1); padding: 20px; border-radius: 10px; border: 1px solid var(--t1-accent);">
-                <p style="font-weight: bold; display: flex; align-items: center; gap: 10px;">
+            <section class="rules-section alert-box">
+                <p>
                     <span style="color: var(--t1-accent); font-size: 1.2rem;">⚡</span>
                     獲得ポイントが同率だった場合は、最終スコアの高い方が勝ちになります。
                 </p>
@@ -269,7 +136,7 @@
                 <h3><span class="icon">🃏</span> サポカ得点表</h3>
                 <p>各サポートカードの具体的な獲得ポイントについては、以下の詳細ページをご確認ください。</p>
                 <div style="margin-top: 20px;">
-                    <a href="sapoka.html" class="btn-back"
+                    <a href="supportcard.html" class="btn-back"
                         style="border-color: var(--t2-accent); color: var(--t2-accent);">サポカ得点表を見る</a>
                 </div>
             </section>
