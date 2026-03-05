@@ -3,84 +3,200 @@
         {
             "name": "猿飛佐奈",
             "xUrl": "https://x.com/Unifee_sanachi",
-            "youtubeUrl": "https://www.youtube.com/@unifee_sarutobi"
+            "youtubeUrl": "https://www.youtube.com/@unifee_sarutobi",
+            "deck": "./img/1-1猿飛佐奈.png"
         },
         {
             "name": "月鈴",
             "xUrl": "https://x.com/suzunomemo",
-            "youtubeUrl": "https://youtube.com/@tsukisuzu_"
+            "youtubeUrl": "https://youtube.com/@tsukisuzu_",
+            "deck": "./img/1-1月鈴.png"
         },
         {
             "name": "かぐch",
             "xUrl": "https://x.com/RiuriuCagCag",
-            "youtubeUrl": "https://www.youtube.com/channel/UCxcnE_vX4qAADpyrmZ_cjAA"
+            "youtubeUrl": "https://www.youtube.com/channel/UCxcnE_vX4qAADpyrmZ_cjAA",
+            "deck": "./img/1-2かぐch.png"
         },
         {
             "name": "明星あかり",
             "xUrl": "https://x.com/akr0501sz",
-            "youtubeUrl": "https://www.youtube.com/@akariakehoshi4087"
+            "youtubeUrl": "https://www.youtube.com/@akariakehoshi4087",
+            "deck": "./img/1-2明星あかり.png"
         },
         {
             "name": "日向なこ",
             "xUrl": "https://x.com/nako_3rl",
-            "youtubeUrl": "https://youtube.com/channel/UC2aJjm_delfy_nZsGEILxYw"
+            "youtubeUrl": "https://youtube.com/channel/UC2aJjm_delfy_nZsGEILxYw",
+            "deck": "./img/1-3日向なこ.png"
         },
         {
             "name": "麻倉ましろ",
             "xUrl": "https://x.com/Asakuramashiro_",
-            "youtubeUrl": "https://youtube.com/@mashirogames"
+            "youtubeUrl": "https://youtube.com/@mashirogames",
+            "deck": "./img/1-3麻倉ましろ.png"
         },
         {
             "name": "いおん",
             "xUrl": "https://x.com/ion_fna",
-            "youtubeUrl": "https://www.youtube.com/@ion_fna"
+            "youtubeUrl": "https://www.youtube.com/@ion_fna",
+            "deck": "./img/1-4いおん.png"
         },
         {
             "name": "小彩みれは",
             "xUrl": "https://x.com/sasa_mireha",
-            "youtubeUrl": "https://www.youtube.com/@sasa.mireha"
+            "youtubeUrl": "https://www.youtube.com/@sasa.mireha",
+            "deck": "./img/1-4小彩みれは.png"
         }
     ],
     "tournament2": [
         {
             "name": "鈴ノ宮凛",
             "xUrl": "https://x.com/sznmyrin",
-            "youtubeUrl": "https://youtube.com/@suzunomiya_rin"
+            "youtubeUrl": "https://youtube.com/@suzunomiya_rin",
+            "deck": "./img/2-1鈴ノ宮凛.png"
         },
         {
             "name": "雨乃メア",
             "xUrl": "https://x.com/mea0002",
-            "youtubeUrl": "https://youtube.com/@amenomea"
+            "youtubeUrl": "https://youtube.com/@amenomea",
+            "deck": "./img/2-1雨乃メア.png"
         },
         {
             "name": "甘楽はのね",
             "xUrl": "https://x.com/tsudurahanone",
-            "youtubeUrl": "https://www.youtube.com/@TsuduraHanone"
+            "youtubeUrl": "https://www.youtube.com/@TsuduraHanone",
+            "deck": "./img/2-2甘楽はのね.png"
         },
         {
             "name": "七星チユ",
             "xUrl": "https://x.com/nanasechiyu",
-            "youtubeUrl": "https://www.youtube.com/@nanasechiyu1117"
+            "youtubeUrl": "https://www.youtube.com/@nanasechiyu1117",
+            "deck": "./img/2-2七星チユ.png"
         },
         {
             "name": "白夜零兎",
             "xUrl": "https://x.com/zero2_trpg",
-            "youtubeUrl": "https://www.youtube.com/@ShiroyaReito"
+            "youtubeUrl": "https://www.youtube.com/@ShiroyaReito",
+            "deck": "./img/2-3白夜零兎.png"
         },
         {
             "name": "星乃城あおい",
             "xUrl": "https://x.com/Hoshinokiaoi",
-            "youtubeUrl": "https://www.youtube.com/channel/UCF1uM54KfpKZ6124TCKJiyQ"
+            "youtubeUrl": "https://www.youtube.com/channel/UCF1uM54KfpKZ6124TCKJiyQ",
+            "deck": "./img/2-3星乃城あおい.png"
         },
         {
             "name": "坂道のぼる",
             "xUrl": "https://twitter.com/noboru_SKMC",
-            "youtubeUrl": "https://www.youtube.com/@noboru_SKMC"
+            "youtubeUrl": "https://www.youtube.com/@noboru_SKMC",
+            "deck": "./img/2-4坂道のぼる.png"
         },
         {
             "name": "桃禾あいむ",
             "xUrl": "https://x.com/tsumu26_p",
-            "youtubeUrl": "https://www.youtube.com/@MocaAimu"
+            "youtubeUrl": "https://www.youtube.com/@MocaAimu",
+            "deck": "./img/2-4桃禾あいむ.png"
+        }
+    ],
+    "tournament3": [
+        {
+            "name": " ",
+            "xUrl": "#",
+            "youtubeUrl": "#",
+            "deck": ""
+        },
+        {
+            "name": " ",
+            "xUrl": "#",
+            "youtubeUrl": "#",
+            "deck": ""
+        },
+        {
+            "name": " ",
+            "xUrl": "#",
+            "youtubeUrl": "#",
+            "deck": ""
+        },
+        {
+            "name": " ",
+            "xUrl": "#",
+            "youtubeUrl": "#",
+            "deck": ""
+        },
+        {
+            "name": " ",
+            "xUrl": "#",
+            "youtubeUrl": "#",
+            "deck": ""
+        },
+        {
+            "name": " ",
+            "xUrl": "#",
+            "youtubeUrl": "#",
+            "deck": ""
+        },
+        {
+            "name": " ",
+            "xUrl": "#",
+            "youtubeUrl": "#",
+            "deck": ""
+        },
+        {
+            "name": " ",
+            "xUrl": "#",
+            "youtubeUrl": "#",
+            "deck": ""
+        },
+        {
+            "name": " ",
+            "xUrl": "#",
+            "youtubeUrl": "#",
+            "deck": ""
+        }
+    ],
+    "tournament4": [
+        {
+            "name": " ",
+            "xUrl": "#",
+            "youtubeUrl": "#",
+            "deck": ""
+        },
+        {
+            "name": " ",
+            "xUrl": "#",
+            "youtubeUrl": "#",
+            "deck": ""
+        },
+        {
+            "name": "👑",
+            "xUrl": "#",
+            "youtubeUrl": "#",
+            "deck": ""
+        },
+        {
+            "name": " ",
+            "xUrl": "#",
+            "youtubeUrl": "#",
+            "deck": ""
+        },
+        {
+            "name": " ",
+            "xUrl": "#",
+            "youtubeUrl": "#",
+            "deck": ""
+        },
+        {
+            "name": "👑",
+            "xUrl": "#",
+            "youtubeUrl": "#",
+            "deck": ""
+        },
+        {
+            "name": "👑",
+            "xUrl": "#",
+            "youtubeUrl": "#",
+            "deck": ""
         }
     ]
 }
