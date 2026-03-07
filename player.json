@@ -101,10 +101,10 @@
     ],
     "tournament3": [
         {
-            "name": " ",
-            "xUrl": "#",
-            "youtubeUrl": "#",
-            "deck": ""
+            "name": "月鈴",
+            "xUrl": "https://x.com/suzunomemo",
+            "youtubeUrl": "https://youtube.com/@tsukisuzu_",
+            "deck": "./img/1-1月鈴.png"
         },
         {
             "name": " ",
