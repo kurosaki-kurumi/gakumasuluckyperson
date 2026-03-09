@@ -187,16 +187,16 @@
             "deck": "./img/2-4坂道のぼる.png"
         },
         {
-            "name": "👑",
-            "xUrl": "#",
-            "youtubeUrl": "#",
-            "deck": ""
+            "name": "坂道のぼる",
+            "xUrl": "https://twitter.com/noboru_SKMC",
+            "youtubeUrl": "https://www.youtube.com/@noboru_SKMC",
+            "deck": "./img/2-4坂道のぼる.png"
         },
         {
-            "name": "👑",
-            "xUrl": "#",
-            "youtubeUrl": "#",
-            "deck": ""
+            "name": "かぐch",
+            "xUrl": "https://x.com/RiuriuCagCag",
+            "youtubeUrl": "https://www.youtube.com/channel/UCxcnE_vX4qAADpyrmZ_cjAA",
+            "deck": "./img/1-2かぐch.png"
         }
     ]
 }
